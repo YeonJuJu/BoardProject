@@ -1,0 +1,7 @@
+package com.juju.spring.config;
+
+/* XML방식의 servlet-context.xml 역할을 하는 파일 : spring mvc 설정 */
+
+public class ServletAppContext {
+
+}

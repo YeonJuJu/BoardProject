@@ -1,0 +1,14 @@
+package com.juju.spring.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+/* XML방식의 servlet-context.xml 역할을 하는 파일 : spring mvc 설정 */
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = {"com.juju.spring.controller", "com.juju.spring.bean"}
+public class ServletAppContext {
+
+}

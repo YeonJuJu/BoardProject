@@ -1,0 +1,27 @@
+package com.juju.spring.config;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+/* XML방식의 web.xml 역할을 하는 파일 */
+
+public class ConfigSpring extends AbstractAnnotationConfigDispatcherServletInitializer{
+
+	@Override
+	protected Class<?>[] getRootConfigClasses() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// DispatcherServlet에 mapping 할 주소를 설정 
+	@Override
+	protected String[] getServletMappings() {
+		return new String[] {"/"};
+	}
+
+}

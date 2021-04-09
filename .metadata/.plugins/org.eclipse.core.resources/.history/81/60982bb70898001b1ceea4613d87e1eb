@@ -1,0 +1,22 @@
+package com.juju.spring.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+/* XML방식의 servlet-context.xml 역할을 하는 파일 : spring mvc 설정 */
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = {"com.juju.spring.controller", "com.juju.spring.bean"}
+public class ServletAppContext implements WebMvcConfigurer{
+	
+	//Controller 에서 return 하는 경로에 접두사와 접미사를 설정
+	@Override
+	public void configureViewResolvers(ViewResolverRegistry registry) {
+		WebMvcConfigurer.super.configureViewResolvers(registry);
+		registry.jsp("/WEB-INF/view/", ".jsp");
+	}
+}

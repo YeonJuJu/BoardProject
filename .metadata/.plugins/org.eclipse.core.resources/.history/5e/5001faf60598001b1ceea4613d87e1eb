@@ -1,0 +1,7 @@
+package com.juju.spring.config;
+
+/* XML방식의 web.xml 역할을 하는 파일 */
+
+public class ConfigSpring extends AbstractAnnotationConfigDispatcherServletInitializer{
+
+}

@@ -1,0 +1,24 @@
+package com.juju.spring.interceptor;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.juju.spring.service.TopMenuService;
+
+public class TopMenuInterceptor {
+
+	private TopMenuService topMenuService;
+	
+	public TopMenuInterceptor(TopMenuService topMenuService) {
+		this.topMenuService = topMenuService;
+	}
+	
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) thorws Exception{
+		
+		List<BoardInfoDTO> topMenuList = topMenuService.getTopMenuList();
+		request.setAttribute("topMenuList", topMenuList);
+		
+		return true;
+	}
+}

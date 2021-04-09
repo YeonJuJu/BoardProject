@@ -1,0 +1,7 @@
+package com.juju.spring.config;
+
+/* XML방식의 root-context.xml 역할을 하는 파일 : bean 정의 */
+
+public class RootAppContext {
+
+}

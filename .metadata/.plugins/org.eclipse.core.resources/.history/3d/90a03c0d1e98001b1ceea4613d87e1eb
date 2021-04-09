@@ -1,0 +1,12 @@
+package com.juju.spring.interceptor;
+
+import com.juju.spring.service.TopMenuService;
+
+public class TopMenuInterceptor {
+
+	private TopMenuService topMenuService;
+	
+	public TopMenuInterceptor(TopMenuService topMenuService) {
+		this.topMenuService = topMenuService;
+	}
+}

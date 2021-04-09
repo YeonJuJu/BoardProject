@@ -1,0 +1,6 @@
+package com.juju.spring.interceptor;
+
+public class TopMenuInterceptor {
+
+	private TopMenuService topMenuService;
+}

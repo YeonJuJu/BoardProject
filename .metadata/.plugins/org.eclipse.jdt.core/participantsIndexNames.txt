@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\workspace\projectJUJU\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\734285261.index
+\projectJUJU\src
+C:\workspace\projectJUJU\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1383811941.index
+\projectJUJU\src
+C:\workspace\projectJUJU\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4208350079.index
+\projectJUJU\src
+C:\workspace\projectJUJU\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1783738169.index
+\projectJUJU\src

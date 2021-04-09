@@ -1,0 +1,10 @@
+package com.juju.spring.config;
+
+import org.springframework.context.annotation.Configuration;
+
+/* XML방식의 root-context.xml 역할을 하는 파일 : bean 정의 */
+
+@Configuration
+public class RootAppContext {
+
+}
