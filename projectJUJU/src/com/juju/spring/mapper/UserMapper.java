@@ -2,6 +2,7 @@ package com.juju.spring.mapper;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.juju.spring.dto.UserDTO;
 
@@ -15,5 +16,11 @@ public interface UserMapper {
 
 	@Select("SELECT USER_IDX, USER_NAME FROM USER_TABLE WHERE USER_ID=#{user_id} AND USER_PW=#{user_pw}")
 	public UserDTO getLoginUser(UserDTO tmpLoginUserDTO);
+
+	@Select("SELECT USER_ID, USER_NAME FROM USER_TABLE WHERE USER_IDX=#{user_idx}")
+	public UserDTO getModifyUserDTO(int user_idx);
+
+	@Update("UPDATE USER_TABLE SET USER_PW=#{user_pw} WHERE USER_IDX=#{user_idx}")
+	public void modifyUserInfo(UserDTO modifyUserDTO);
 }
 

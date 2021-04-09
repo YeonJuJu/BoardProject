@@ -77,12 +77,27 @@ public class UserController {
 	}
 	
 	@GetMapping("/modify")
-	public String modify() {
+	public String modify(@ModelAttribute("modifyUserDTO") UserDTO modifyUserDTO) {
+		
+		userService.getModifyUserDTO(modifyUserDTO);
 		return "user/modify";
+	}
+	
+	@PostMapping("/modify_proc")
+	public String modifyProc(@Valid @ModelAttribute("modifyUserDTO") UserDTO modifyUserDTO, BindingResult result){
+		
+		userService.modifyUserInfo(modifyUserDTO);
+		
+		if(result.hasErrors()) {
+			return "user/modify";
+		}
+		
+		return "user/modify_success";
 	}
 	
 	@GetMapping("/logout")
 	public String logout() {
+		loginUserDTO.setUserLogin(false);
 		return "user/logout";
 	}
 	

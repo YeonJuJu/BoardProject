@@ -27,4 +27,13 @@ public class UserDAO {
 		UserDTO fromDBUserDTO = userMapper.getLoginUser(tmpLoginUserDTO);
 		return fromDBUserDTO;
 	}
+	
+	public UserDTO getModifyUserDTO(int user_idx) {
+		UserDTO fromDBModifyUserDTO = userMapper.getModifyUserDTO(user_idx);
+		return fromDBModifyUserDTO;
+	}
+	
+	public void modifyUserInfo(UserDTO modifyUserDTO) {
+		userMapper.modifyUserInfo(modifyUserDTO);
+	}
 }
