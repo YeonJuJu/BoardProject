@@ -55,11 +55,6 @@ public class UserController {
 		
 	}
 	
-	@GetMapping("/not_login")
-	public String notLogin() {
-		return "user/not_login";
-	}
-	
 	@GetMapping("/join")
 	public String join(@ModelAttribute("joinUserDTO") UserDTO joinUserDTO) {
 		return "user/join";

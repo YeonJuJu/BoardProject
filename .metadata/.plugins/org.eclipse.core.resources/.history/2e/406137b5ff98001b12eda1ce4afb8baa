@@ -5,8 +5,8 @@
 <html lang="ko">
 
 <!-- 절대 경로 설정 -->
-<c:url var="root" value="/" />
-<%-- <c:url var="root" value="${pageContext.request.contextPath }/" /> --%>
+<%-- <c:url var="root" value="/" /> --%>
+<c:url var="root" value="${pageContext.request.contextPath }/" />
 
 <head>
 <meta charset="UTF-8">

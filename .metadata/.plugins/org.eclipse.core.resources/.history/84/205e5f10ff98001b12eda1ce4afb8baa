@@ -22,7 +22,6 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.juju.spring.dto.UserDTO;
-import com.juju.spring.interceptor.CheckLoginInterceptor;
 import com.juju.spring.interceptor.TopMenuInterceptor;
 import com.juju.spring.mapper.BoardMapper;
 import com.juju.spring.mapper.TopMenuMapper;
@@ -138,15 +137,11 @@ public class ServletAppContext implements WebMvcConfigurer{
 		WebMvcConfigurer.super.addInterceptors(registry);
 		
 		TopMenuInterceptor topMenuInterceptor = new TopMenuInterceptor(topMenuService, loginUserDTO);
-		CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUserDTO);
 		
 		InterceptorRegistration reg1 = registry.addInterceptor(topMenuInterceptor);
-		InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
 		
 		// "/**" 로 설정했기 때문에 모든 요청 주소에 대해 interceptor 작동
 		reg1.addPathPatterns("/**");
-		reg2.addPathPatterns("/user/modify", "/user/logout", "/board/*");
-		reg2.excludePathPatterns("/board/main");
 	}
 	
 	// properties 폴더 안에 있는 파일들이 충돌되지 않도록 개별관리하는 함수
