@@ -24,12 +24,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.juju.spring.dto.UserDTO;
 import com.juju.spring.interceptor.CheckLoginInterceptor;
-import com.juju.spring.interceptor.CheckWriterInterceptor;
 import com.juju.spring.interceptor.TopMenuInterceptor;
 import com.juju.spring.mapper.BoardMapper;
 import com.juju.spring.mapper.TopMenuMapper;
 import com.juju.spring.mapper.UserMapper;
-import com.juju.spring.service.BoardService;
 import com.juju.spring.service.TopMenuService;
 
 /* XML방식의 servlet-context.xml 역할을 하는 파일 : spring mvc 설정 */
@@ -61,9 +59,6 @@ public class ServletAppContext implements WebMvcConfigurer{
 		
 	@Resource(name="loginUserDTO")
 	private UserDTO loginUserDTO;
-	
-	@Autowired
-	private BoardService boardService;
 	
 	// Controller 에서 return 하는 경로에 접두사와 접미사를 설정
 	@Override
@@ -145,17 +140,15 @@ public class ServletAppContext implements WebMvcConfigurer{
 		
 		TopMenuInterceptor topMenuInterceptor = new TopMenuInterceptor(topMenuService, loginUserDTO);
 		CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUserDTO);
-		CheckWriterInterceptor checkWriterInterceptor = new CheckWriterInterceptor(loginUserDTO, boardService);
+		CheckWriterInterceptor checkWriterInterceptor = new CheckLoginInterceptor(loginUserDTO, boardService);
 		
 		InterceptorRegistration reg1 = registry.addInterceptor(topMenuInterceptor);
 		InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
-		InterceptorRegistration reg3 = registry.addInterceptor(checkWriterInterceptor);
 		
 		// "/**" 로 설정했기 때문에 모든 요청 주소에 대해 interceptor 작동
 		reg1.addPathPatterns("/**");
 		reg2.addPathPatterns("/user/modify", "/user/logout", "/board/*");
 		reg2.excludePathPatterns("/board/main");
-		reg3.addPathPatterns("/board/modify", "/board/delete");
 	}
 	
 	// properties 폴더 안에 있는 파일들이 충돌되지 않도록 개별관리하는 함수

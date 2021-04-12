@@ -86,9 +86,4 @@ public class BoardController {
 		return "board/delete";
 	}
 	
-	@GetMapping("/not_writer")
-	public String notWriter() {
-		return "/board/not_writer";
-	}
-	
 }

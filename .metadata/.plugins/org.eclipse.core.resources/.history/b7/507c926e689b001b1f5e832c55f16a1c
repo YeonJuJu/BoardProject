@@ -155,7 +155,6 @@ public class ServletAppContext implements WebMvcConfigurer{
 		reg1.addPathPatterns("/**");
 		reg2.addPathPatterns("/user/modify", "/user/logout", "/board/*");
 		reg2.excludePathPatterns("/board/main");
-		reg3.addPathPatterns("/board/modify", "/board/delete");
 	}
 	
 	// properties 폴더 안에 있는 파일들이 충돌되지 않도록 개별관리하는 함수
