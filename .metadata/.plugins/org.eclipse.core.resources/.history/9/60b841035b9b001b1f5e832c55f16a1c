@@ -43,8 +43,8 @@ public class BoardController {
 		
 		model.addAttribute("board_info_idx", board_info_idx);
 		
-		ContentDTO readContentDTO = boardService.getContentInfo(content_idx);
-		model.addAttribute("readContentDTO", readContentDTO);
+		ContentDTO contentDTO = boardService.getContentInfo(content_idx);
+		model.addAttribute("contentDTO", contentDTO);
 		
 		return "board/read";
 	}
