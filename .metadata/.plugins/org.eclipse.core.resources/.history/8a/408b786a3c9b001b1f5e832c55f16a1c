@@ -27,9 +27,6 @@ public class BoardController {
 		
 		model.addAttribute("board_info_idx", board_info_idx);
 		
-		String board_info_name = boardService.getBoardInfoName(board_info_idx);
-		model.addAttribute("board_info_name", board_info_name);
-		
 		return "board/main";
 	}
 	

@@ -15,9 +15,4 @@ public class BoardDAO {
 	public void addContentInfo(ContentDTO writeContentDTO) {
 		boardMapper.addContentInfo(writeContentDTO);
 	}
-	
-	public String getBoardInfoName(int board_info_idx) {
-		String board_info_name = boardMapper.getBoardInfoName(board_info_idx);
-		return board_info_name;
-	}
 }

@@ -1685,3 +1685,27 @@
 2021-04-12 11:33:19,792 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\main\resources
 2021-04-12 11:33:19,793 [Worker-42: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
 2021-04-12 11:33:19,793 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\test\resources
+2021-04-12 12:01:20,226 [Worker-52: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:01:20,235 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\main\resources
+2021-04-12 12:01:20,235 [Worker-52: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:01:20,236 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\test\resources
+2021-04-12 12:01:56,596 [Worker-55: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:01:56,597 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\main\resources
+2021-04-12 12:01:56,597 [Worker-55: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:01:56,598 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\test\resources
+2021-04-12 12:03:43,599 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:03:43,600 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\main\resources
+2021-04-12 12:03:43,601 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:03:43,602 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\test\resources
+2021-04-12 12:04:55,946 [Worker-52: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:04:55,947 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\main\resources
+2021-04-12 12:04:55,947 [Worker-52: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:04:55,948 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\test\resources
+2021-04-12 12:08:55,333 [Worker-56: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:08:55,334 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\main\resources
+2021-04-12 12:08:55,335 [Worker-56: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:08:55,336 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\test\resources
+2021-04-12 12:11:02,989 [Worker-59: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:11:02,990 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\main\resources
+2021-04-12 12:11:02,991 [Worker-59: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-12 12:11:02,991 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\301-14\Documents\GitHub\BoardProject\projectJUJU\src\test\resources

@@ -60,9 +60,4 @@ public class BoardService {
 		boardDAO.addContentInfo(writeContentDTO);
 		
 	}
-	
-	public String getBoardInfoName(int board_info_idx) {
-		String board_info_name = boardDAO.getBoardInfoName(board_info_idx);
-		return board_info_name;
-	}
 }
