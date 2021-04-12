@@ -53,6 +53,9 @@ public class BoardController {
 		ContentDTO readContentDTO = boardService.getContentInfo(content_idx);
 		model.addAttribute("readContentDTO", readContentDTO);
 		
+		System.out.println("loginUserDTO.getUser_idx() : " + loginUserDTO.getUser_idx());
+		System.out.println("readContentDTO.getContent_writer_idx() : " + readContentDTO.getContent_writer_idx());
+		
 		return "board/read";
 	}
 	
