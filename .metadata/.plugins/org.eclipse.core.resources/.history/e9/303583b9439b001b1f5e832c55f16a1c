@@ -71,9 +71,4 @@ public class BoardService {
 		List<ContentDTO> contentList = boardDAO.getContentList(board_info_idx);
 		return contentList;
 	}
-
-	public ContentDTO getContentInfo(int content_idx) {
-		ContentDTO contentDTO = boardDAO.getContentInfo(content_idx);
-		return contentDTO;
-	}
 }

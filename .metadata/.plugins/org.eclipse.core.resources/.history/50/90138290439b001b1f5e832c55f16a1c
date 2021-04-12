@@ -28,8 +28,5 @@ public class BoardDAO {
 		return contentList;
 	}
 
-	public ContentDTO getContentInfo(int content_idx) {
-		ContentDTO contentDTO = boardMapper.getContentInfo(content_idx);
-		return contentDTO;
-	}
+	public ContentDTO getContentInfo(int content_idx);
 }
