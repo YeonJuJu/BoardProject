@@ -43,7 +43,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="contentDTO" items="${contentList }">
+						<c:formEach var="contentDTO" items="${contentList }">
 							<tr>
 								
 								<td class="text-center d-none d-md-table-cell">${contentDTO.content_idx }</td>
@@ -52,7 +52,7 @@
 								<td class="text-center d-none d-md-table-cell">${contentDTO.content_date}</td>
 								
 							</tr>
-						</c:forEach>
+						</c:formEach>
 					</tbody>
 				</table>
 

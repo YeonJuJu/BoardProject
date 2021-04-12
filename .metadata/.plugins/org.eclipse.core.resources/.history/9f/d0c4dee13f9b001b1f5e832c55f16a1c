@@ -32,7 +32,7 @@ public class BoardController {
 		String board_info_name = boardService.getBoardInfoName(board_info_idx);
 		model.addAttribute("board_info_name", board_info_name);
 		
-		List<ContentDTO> contentList = boardService.getContentList(board_info_idx);
+		List<ContentDTO> contentList = boardService.getBoardInfoName(board_info_idx);
 		model.addAttribute("contentList", contentList);
 		
 		return "board/main";

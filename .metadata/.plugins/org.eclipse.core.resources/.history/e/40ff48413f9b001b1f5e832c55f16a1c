@@ -2,7 +2,6 @@ package com.juju.spring.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -65,10 +64,5 @@ public class BoardService {
 	public String getBoardInfoName(int board_info_idx) {
 		String board_info_name = boardDAO.getBoardInfoName(board_info_idx);
 		return board_info_name;
-	}
-	
-	public List<ContentDTO> getContentList(int board_info_idx){
-		List<ContentDTO> contentList = boardDAO.getContentList(board_info_idx);
-		return contentList;
 	}
 }

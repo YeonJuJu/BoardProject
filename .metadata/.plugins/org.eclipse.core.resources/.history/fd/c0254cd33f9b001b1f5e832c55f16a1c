@@ -1,7 +1,5 @@
 package com.juju.spring.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +29,6 @@ public class BoardController {
 		
 		String board_info_name = boardService.getBoardInfoName(board_info_idx);
 		model.addAttribute("board_info_name", board_info_name);
-		
-		List<ContentDTO> contentList = boardService.getContentList(board_info_idx);
-		model.addAttribute("contentList", contentList);
 		
 		return "board/main";
 	}

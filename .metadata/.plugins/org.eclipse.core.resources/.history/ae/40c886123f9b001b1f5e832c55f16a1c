@@ -1,7 +1,5 @@
 package com.juju.spring.dao;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -21,10 +19,5 @@ public class BoardDAO {
 	public String getBoardInfoName(int board_info_idx) {
 		String board_info_name = boardMapper.getBoardInfoName(board_info_idx);
 		return board_info_name;
-	}
-	
-	public List<ContentDTO> getContentList(int board_info_idx){
-		List<ContentDTO> contentList = boardMapper.getContentList(board_info_idx);
-		return contentList;
 	}
 }
