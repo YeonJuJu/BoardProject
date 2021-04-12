@@ -1,6 +1,8 @@
 package com.juju.spring.config;
 
 import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration.Dynamic;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -37,5 +39,16 @@ public class ConfigSpring extends AbstractAnnotationConfigDispatcherServletIniti
 		encodingFilter.setEncoding("UTF-8");
 		
 		return new Filter[] {encodingFilter};
+	}
+	
+	// 파일 관련 설정
+	@Override
+	protected void customizeRegistration(Dynamic registration) {
+		
+		super.customizeRegistration(registration);
+		
+		MultipartConfigElement config1 = new MultipartConfigElement(null, 50*1024*1024, 200*1024*1024, 0);
+	
+		registration.setMultipartConfig(config1);
 	}
 }

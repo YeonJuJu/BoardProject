@@ -1,0 +1,9 @@
+package com.juju.spring.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+@PropertySource("/WEB-INF/properties/option.properties")
+public class BoardService {
+
+}

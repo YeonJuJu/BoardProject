@@ -1,0 +1,10 @@
+package com.juju.spring.service;
+
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Service;
+
+@Service
+@PropertySource("/WEB-INF/properties/option.properties")
+public class BoardService {
+
+}

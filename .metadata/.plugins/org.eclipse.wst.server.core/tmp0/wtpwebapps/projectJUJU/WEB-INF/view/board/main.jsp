@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html lang="ko">
 
 <!-- 절대 경로 설정 -->
 <c:url var="root" value="/" />
 <%-- <c:url var="root" value="${pageContext.request.contextPath }/" /> --%>
 
+<!DOCTYPE html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -141,7 +141,7 @@
 				</div>
 
 				<div class="text-right">
-					<a href="${root }board/write" class="btn btn-primary">글쓰기</a>
+					<a href="${root }board/write?board_info_idx=${board_info_idx }" class="btn btn-primary">글쓰기</a>
 				</div>
 
 			</div>
