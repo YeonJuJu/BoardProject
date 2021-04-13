@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.annotations.Update;
 
 import com.juju.spring.dto.ContentDTO;
 
@@ -36,4 +37,10 @@ public interface BoardMapper {
       + "WHERE C.CONTENT_WRITER_IDX = U.USER_IDX "
       + "AND C.CONTENT_IDX = #{content_idx}")	
 	public ContentDTO getContentInfo(int content_idx);
+	
+	@Update("UPDATE CONTENT_TABLE SET CONTENT_SUBJECT=#{content_subject}, "
+	         +"CONTENT_TEXT=#{content_text}, "
+	         +"CONTENT_FILE=#{content_file, jdbcType=VARCHAR} "
+	         +"WHERE CONTENT_IDX=#{content_idx}")
+	public void modifyContentInfo(ContentDTO modifyContentDTO);
 }

@@ -312,3 +312,13 @@
 0:0:0:0:0:0:0:1 - - [12/Apr/2021:16:51:11 +0900] "GET /projectJUJU/board/main?board_info_idx=1 HTTP/1.1" 200 5454
 0:0:0:0:0:0:0:1 - - [12/Apr/2021:16:51:12 +0900] "GET /projectJUJU/board/read?board_info_idx=1&content_idx=4 HTTP/1.1" 200 4201
 0:0:0:0:0:0:0:1 - - [12/Apr/2021:16:51:15 +0900] "GET /projectJUJU/board/read?board_info_idx=1&content_idx=2 HTTP/1.1" 200 3876
+127.0.0.1 - - [12/Apr/2021:17:24:38 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [12/Apr/2021:17:24:39 +0900] "GET /projectJUJU/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Apr/2021:17:24:39 +0900] "GET /projectJUJU/main HTTP/1.1" 200 9026
+0:0:0:0:0:0:0:1 - - [12/Apr/2021:17:24:43 +0900] "GET /projectJUJU/user/login HTTP/1.1" 200 3472
+0:0:0:0:0:0:0:1 - - [12/Apr/2021:17:24:47 +0900] "POST /projectJUJU//user/login_proc HTTP/1.1" 200 104
+0:0:0:0:0:0:0:1 - - [12/Apr/2021:17:24:48 +0900] "GET /projectJUJU/main HTTP/1.1" 200 9032
+0:0:0:0:0:0:0:1 - - [12/Apr/2021:17:24:49 +0900] "GET /projectJUJU/board/main?board_info_idx=1 HTTP/1.1" 200 5454
+0:0:0:0:0:0:0:1 - - [12/Apr/2021:17:24:51 +0900] "GET /projectJUJU/board/read?board_info_idx=1&content_idx=2 HTTP/1.1" 200 3876
+0:0:0:0:0:0:0:1 - - [12/Apr/2021:17:25:20 +0900] "GET /projectJUJU/board/modify?board_info_idx=1&content_idx=2 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Apr/2021:17:25:20 +0900] "GET /projectJUJU/board/not_writer HTTP/1.1" 404 721

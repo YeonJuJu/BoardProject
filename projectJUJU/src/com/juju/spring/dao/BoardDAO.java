@@ -32,4 +32,8 @@ public class BoardDAO {
 		ContentDTO contentDTO = boardMapper.getContentInfo(content_idx);
 		return contentDTO;
 	}
+	
+	public void modifyContentInfo(ContentDTO modifyContentDTO) {
+		boardMapper.modifyContentInfo(modifyContentDTO);
+	}
 }

@@ -47,6 +47,7 @@ public class BoardController {
 	public String read(@RequestParam("board_info_idx") int board_info_idx, @RequestParam("content_idx") int content_idx, Model model) {
 		
 		model.addAttribute("board_info_idx", board_info_idx);
+		model.addAttribute("content_idx", content_idx);
 		
 		model.addAttribute("loginUserDTO", loginUserDTO);
 		
@@ -77,8 +78,36 @@ public class BoardController {
 	}
 	
 	@GetMapping("/modify")
-	public String modify() {
+	public String modify(@RequestParam("board_info_idx") int board_info_idx, @RequestParam("content_idx") int content_idx, @ModelAttribute("modifyContentDTO") ContentDTO modifyContentDTO, Model model) {
+		
+		model.addAttribute("board_info_idx", board_info_idx);
+		model.addAttribute("content_idx", content_idx);
+		
+		ContentDTO fromDBContentDTO = boardService.getContentInfo(content_idx);
+		
+		modifyContentDTO.setContent_board_idx(board_info_idx);
+		modifyContentDTO.setContent_idx(content_idx);
+		modifyContentDTO.setContent_writer_idx(fromDBContentDTO.getContent_writer_idx());
+		modifyContentDTO.setContent_writer_name(fromDBContentDTO.getContent_writer_name());
+		modifyContentDTO.setContent_subject(fromDBContentDTO.getContent_subject());
+		modifyContentDTO.setContent_text(fromDBContentDTO.getContent_text());
+		modifyContentDTO.setContent_date(fromDBContentDTO.getContent_date());
+		modifyContentDTO.setContent_file(fromDBContentDTO.getContent_file());
+		
 		return "board/modify";
+	}
+	
+	@PostMapping("/modify_proc")
+	public String modifyProc(@Valid @ModelAttribute("modifyContentDTO") ContentDTO modifyContentDTO, BindingResult result) {
+		
+		if(result.hasErrors()) {
+			System.out.println(result.getFieldErrors());
+			return "board/modify";
+		}
+		
+		boardService.modifyContentInfo(modifyContentDTO);
+		
+		return "board/modify_success";
 	}
 	
 	@GetMapping("/delete")

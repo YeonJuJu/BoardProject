@@ -76,4 +76,16 @@ public class BoardService {
 		ContentDTO contentDTO = boardDAO.getContentInfo(content_idx);
 		return contentDTO;
 	}
+	
+	public void modifyContentInfo(ContentDTO modifyContentDTO) {
+		
+		MultipartFile upload_file = modifyContentDTO.getUpload_file();
+		
+		if(upload_file.getSize() > 0) {
+			String file_name = saveUploadFile(upload_file);
+			modifyContentDTO.setContent_file(file_name);
+		}
+		
+		boardDAO.modifyContentInfo(modifyContentDTO);
+	}
 }
