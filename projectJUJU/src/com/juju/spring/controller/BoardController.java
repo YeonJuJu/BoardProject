@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.juju.spring.dto.ContentDTO;
+import com.juju.spring.dto.PageDTO;
 import com.juju.spring.dto.UserDTO;
 import com.juju.spring.service.BoardService;
 
@@ -30,21 +31,26 @@ public class BoardController {
 	private UserDTO loginUserDTO;
 	
 	@GetMapping("/main")
-	public String main(@RequestParam("board_info_idx") int board_info_idx, Model model) {
+	public String main(@RequestParam("board_info_idx") int board_info_idx, @RequestParam(value="page", defaultValue="1") int page ,Model model) {
 		
 		model.addAttribute("board_info_idx", board_info_idx);
 		
 		String board_info_name = boardService.getBoardInfoName(board_info_idx);
 		model.addAttribute("board_info_name", board_info_name);
 		
-		List<ContentDTO> contentList = boardService.getContentList(board_info_idx);
+		List<ContentDTO> contentList = boardService.getContentList(board_info_idx, page);
 		model.addAttribute("contentList", contentList);
+		
+		PageDTO pageDTO = boardService.getContentCnt(board_info_idx, page);
+		model.addAttribute("pageDTO", pageDTO);
+		
+		model.addAttribute("page", page);
 		
 		return "board/main";
 	}
 	
 	@GetMapping("/read")
-	public String read(@RequestParam("board_info_idx") int board_info_idx, @RequestParam("content_idx") int content_idx, Model model) {
+	public String read(@RequestParam("board_info_idx") int board_info_idx, @RequestParam("content_idx") int content_idx, @RequestParam("page") int page, Model model) {
 		
 		model.addAttribute("board_info_idx", board_info_idx);
 		model.addAttribute("content_idx", content_idx);
@@ -53,6 +59,8 @@ public class BoardController {
 		
 		ContentDTO readContentDTO = boardService.getContentInfo(content_idx);
 		model.addAttribute("readContentDTO", readContentDTO);
+		
+		model.addAttribute("page", page);
 		
 		return "board/read";
 	}

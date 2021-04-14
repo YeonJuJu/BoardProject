@@ -2,6 +2,7 @@ package com.juju.spring.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -23,8 +24,8 @@ public class BoardDAO {
 		return board_info_name;
 	}
 	
-	public List<ContentDTO> getContentList(int board_info_idx){
-		List<ContentDTO> contentList = boardMapper.getContentList(board_info_idx);
+	public List<ContentDTO> getContentList(int board_info_idx, RowBounds rowBounds){
+		List<ContentDTO> contentList = boardMapper.getContentList(board_info_idx, rowBounds);
 		return contentList;
 	}
 
@@ -35,5 +36,10 @@ public class BoardDAO {
 	
 	public void modifyContentInfo(ContentDTO modifyContentDTO) {
 		boardMapper.modifyContentInfo(modifyContentDTO);
+	}
+	
+	public int getContentCnt(int content_board_idx) {
+		int contentCnt = boardMapper.getContentCnt(content_board_idx);
+		return contentCnt;
 	}
 }

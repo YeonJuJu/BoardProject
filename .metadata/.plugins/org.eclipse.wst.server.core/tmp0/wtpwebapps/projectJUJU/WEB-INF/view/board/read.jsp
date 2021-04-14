@@ -37,19 +37,19 @@
 				<div class="card shadow">
 					<div class="card-body">
 						<div class="form-group">
-							<label for="board_writer_name">작성자</label> <input type="text"
-								id="board_writer_name" name="board_writer_name"
+							<label for="board_writer_name">작성자</label> 
+							<input type="text" id="board_writer_name" name="board_writer_name"
 								class="form-control" value="${readContentDTO.content_writer_name}"
 								disabled="disabled" />
 						</div>
 						<div class="form-group">
-							<label for="board_date">작성날짜</label> <input type="text"
-								id="board_date" name="board_date" class="form-control"
+							<label for="board_date">작성날짜</label> 
+							<input type="text" id="board_date" name="board_date" class="form-control"
 								value="${readContentDTO.content_date }" disabled="disabled" />
 						</div>
 						<div class="form-group">
-							<label for="board_subject">제목</label> <input type="text"
-								id="board_subject" name="board_subject" class="form-control"
+							<label for="board_subject">제목</label> 
+							<input type="text" id="board_subject" name="board_subject" class="form-control"
 								value="${readContentDTO.content_subject }" disabled="disabled" />
 						</div>
 						<div class="form-group">
@@ -68,7 +68,7 @@
 						</c:if>
 						<div class="form-group">
 							<div class="text-right">
-								<a href="${root }board/main?board_info_idx=${board_info_idx}" class="btn btn-primary">목록보기</a> 
+								<a href="${root }board/main?board_info_idx=${board_info_idx}&page=${page}" class="btn btn-primary">목록보기</a> 
 								<c:if test="${loginUserDTO.user_idx == readContentDTO.content_writer_idx }">
 				                <a href="${root }board/modify?board_info_idx=${board_info_idx}&content_idx=${content_idx}" class="btn btn-info">수정하기</a>
 				                <a href="${root }board/delete?board_info_idx=${board_info_idx}&content_idx=${content_idx}" class="btn btn-danger">삭제하기</a>

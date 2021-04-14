@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.session.RowBounds;
 
 import com.juju.spring.dto.ContentDTO;
 
@@ -28,7 +29,7 @@ public interface BoardMapper {
 	        + " WHERE C.CONTENT_WRITER_IDX = U.USER_IDX "
 	        + "   AND C.CONTENT_BOARD_IDX = #{board_info_idx} "
 	        + " ORDER BY C.CONTENT_IDX DESC")
-	List<ContentDTO> getContentList(int board_info_idx);
+	List<ContentDTO> getContentList(int board_info_idx, RowBounds rowBounds);
 
 	@Select("SELECT U.USER_NAME CONTENT_WRITER_NAME, " 
 			  + "TO_CHAR(C.CONTENT_DATE, 'YYYY-MM-DD HH24:MI:SS') CONTENT_DATE, " 
@@ -43,4 +44,7 @@ public interface BoardMapper {
 	         +"CONTENT_FILE=#{content_file, jdbcType=VARCHAR} "
 	         +"WHERE CONTENT_IDX=#{content_idx}")
 	public void modifyContentInfo(ContentDTO modifyContentDTO);
+
+	@Select("SELECT COUNT(*) FROM CONTENT_TABLE WHERE CONTENT_BOARD_IDX=#{content_board_idx}")
+	public int getContentCnt(int content_board_idx);
 }

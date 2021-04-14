@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -14,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.juju.spring.dao.BoardDAO;
 import com.juju.spring.dto.ContentDTO;
+import com.juju.spring.dto.PageDTO;
 import com.juju.spring.dto.UserDTO;
 
 @Service
@@ -22,6 +24,12 @@ public class BoardService {
 	
 	@Value("${path.load}")
 	private String path_load;
+
+	@Value("${page.listcnt}")
+	private int page_listcnt;
+
+	@Value("${page.paginationcnt}")
+	private int page_paginationcnt;
 	
 	@Autowired
 	private BoardDAO boardDAO;
@@ -67,8 +75,13 @@ public class BoardService {
 		return board_info_name;
 	}
 	
-	public List<ContentDTO> getContentList(int board_info_idx){
-		List<ContentDTO> contentList = boardDAO.getContentList(board_info_idx);
+	public List<ContentDTO> getContentList(int board_info_idx, int page){
+	
+		int start = (page - 1) * page_listcnt;
+		
+		RowBounds rowBounds = new RowBounds(start, page_listcnt);
+		
+		List<ContentDTO> contentList = boardDAO.getContentList(board_info_idx, rowBounds);
 		return contentList;
 	}
 
@@ -87,5 +100,13 @@ public class BoardService {
 		}
 		
 		boardDAO.modifyContentInfo(modifyContentDTO);
+	}
+	
+	public PageDTO getContentCnt(int content_board_idx, int currentPage) {
+		int contentCnt = boardDAO.getContentCnt(content_board_idx);
+		
+		PageDTO pageDTO = new PageDTO(contentCnt, currentPage, page_listcnt, page_paginationcnt);
+		
+		return pageDTO;
 	}
 }
