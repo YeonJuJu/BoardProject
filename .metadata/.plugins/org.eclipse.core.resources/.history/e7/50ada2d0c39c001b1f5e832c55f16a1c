@@ -107,9 +107,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("/modify_proc")
-	public String modifyProc(@Valid @ModelAttribute("modifyContentDTO") ContentDTO modifyContentDTO, @RequestParam("page") int page, BindingResult result, Model model) {
-		
-		model.addAttribute("page", page);
+	public String modifyProc(@Valid @ModelAttribute("modifyContentDTO") ContentDTO modifyContentDTO, BindingResult result) {
 		
 		if(result.hasErrors()) {
 			System.out.println(result.getFieldErrors());

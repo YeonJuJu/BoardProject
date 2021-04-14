@@ -90,7 +90,6 @@ public class BoardController {
 		
 		model.addAttribute("board_info_idx", board_info_idx);
 		model.addAttribute("content_idx", content_idx);
-		model.addAttribute("page", page);
 		
 		ContentDTO fromDBContentDTO = boardService.getContentInfo(content_idx);
 		
@@ -107,9 +106,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("/modify_proc")
-	public String modifyProc(@Valid @ModelAttribute("modifyContentDTO") ContentDTO modifyContentDTO, @RequestParam("page") int page, BindingResult result, Model model) {
-		
-		model.addAttribute("page", page);
+	public String modifyProc(@Valid @ModelAttribute("modifyContentDTO") ContentDTO modifyContentDTO, BindingResult result) {
 		
 		if(result.hasErrors()) {
 			System.out.println(result.getFieldErrors());

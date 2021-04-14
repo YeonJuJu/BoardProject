@@ -107,7 +107,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("/modify_proc")
-	public String modifyProc(@Valid @ModelAttribute("modifyContentDTO") ContentDTO modifyContentDTO, @RequestParam("page") int page, BindingResult result, Model model) {
+	public String modifyProc(@Valid @ModelAttribute("modifyContentDTO") ContentDTO modifyContentDTO, @RequestParam("page") int page, BindingResult result) {
 		
 		model.addAttribute("page", page);
 		
