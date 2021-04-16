@@ -109,8 +109,4 @@ public class BoardService {
 		
 		return pageDTO;
 	}
-	
-	public void deleteContent(int content_idx) {
-		boardDAO.deleteContent(content_idx);
-	}
 }

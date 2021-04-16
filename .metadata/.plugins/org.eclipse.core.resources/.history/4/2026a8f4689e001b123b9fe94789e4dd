@@ -2,7 +2,6 @@ package com.juju.spring.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
@@ -49,6 +48,5 @@ public interface BoardMapper {
 	@Select("SELECT COUNT(*) FROM CONTENT_TABLE WHERE CONTENT_BOARD_IDX=#{content_board_idx}")
 	public int getContentCnt(int content_board_idx);
 
-	@Delete("DELETE FROM CONTENT_TABLE WHERE CONTENT_IDX=#{content_idx}")
-	public void deleteContent(int content_idx);
+
 }
